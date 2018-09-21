@@ -38,15 +38,15 @@ public class PixelManipulation {
         System.out.println(image.dump());
 
         // 以实际图片测试 ， 去除绿色
-        Mat test = Imgcodecs.imread("F:\\opencv-1\\1.jpg",Imgcodecs.CV_LOAD_IMAGE_COLOR);
+        Mat test = Imgcodecs.imread("F:\\opencv-1\\1-filterRedGreen.jpg",Imgcodecs.CV_LOAD_IMAGE_COLOR);
         int total = (int) (test.total() * test.elemSize()) ;
         byte[] buffer = new byte[total];
         test.get(0,0,buffer);
         for (int i = 0 ; i < total ; i++) {
-            if (i % 3 == 2 ) buffer[i] = 0 ;
+            if (i % 3 == 0 ) buffer[i] = 0 ;
         }
         test.put(0,0,buffer);
         System.out.println(buffer.length);
-        Imgcodecs.imwrite("F:\\opencv-1\\1-filterRed.jpg",test);
+        Imgcodecs.imwrite("F:\\opencv-1\\1-filterRedGreenBlue.jpg",test);
     }
 }
