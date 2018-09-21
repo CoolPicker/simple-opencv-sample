@@ -24,7 +24,7 @@ public class VideoCaptureSample {
     public static void main(String[] args) {
         VideoCaptureSample sample = new VideoCaptureSample();
         sample.initGUI();
-        sample.runMainLoop(args);
+        sample.runMainLoop();
     }
 
     private void initGUI(){
@@ -36,7 +36,7 @@ public class VideoCaptureSample {
         frame.setVisible(true);
     }
 
-    private void runMainLoop(String[] args) {
+    private void runMainLoop() {
         ImageViewer viewer = new ImageViewer();
         Mat webcamMatImage = new Mat();
         Image tempImage;
